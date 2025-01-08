@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            padding: 20px;
+        }
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        .banner {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        .banner .title {
+            font-size: 1.2em;
+            display: flex;
+            justify-content: space-between;
+        }
+        .banner .subtitle {
+            font-size: 1em;
+            margin-top: 5px;
+            border-top: 1px solid white;
+            padding-top: 5px;
+        }
+        .content {
+            display: none;
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+        }
+        .step-title {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+        .dialogue {
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 10px 0;
+            text-align: right;
+            font-style: italic;
+        }
+        .dropdown {
+            margin-bottom: 20px;
+        }
+        .dropdown select {
+            font-size: 1em;
+            padding: 5px;
+            margin-left: 10px;
+        }
+        table { width: 100%; border-collapse: collapse; }
+        td { padding: 8px; border: 1px solid #ddd; vertical-align: top; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Playbook - K1 - M25.5</h1>
+
+        <div class="dropdown">
+            <label for="class-time">Tiempo efectivo de Clase:</label>
+            <select id="class-time" onchange="updateContent()">
+                <option value="50">50 minutos</option>
+                <option value="40">40 minutos</option>
+                <option value="30">30 minutos</option>
+            </select>
+        </div>
+
+        <div class="dropdown">
+            <label for="class-level">Nivel:</label>
+            <select id="class-level" onchange="updateContent()">
+                <option value="K1">K1</option>
+                <option value="K2">K2</option>
+                <option value="K3">K3</option>
+            </select>
+        </div>
+
+        <h2 id="selected-time" class="time-title">Tiempo efectivo de clase: 50 minutos</h2>
+        <h2 id="selected-level" class="level-title">Nivel: K1</h2>
+
+        <!-- ............................................Aquí empezarán las actividades........................................... -->
+
+<!-- Actividad 0 -->
+<div id="activity-0" class="activity">
+    <div class="banner" onclick="toggleContent('revision_materiales')">
+        <div class="title">📚 Actividad 0: Revisión de Materiales ⏰ Tiempo: N/A</div>
+        <div class="subtitle">Asegúrate de tener listos todos los materiales indicados en la DIAPOSITIVA 1 antes de iniciar la misión.</div>
+    </div>
+    <div id="revision_materiales" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (N/A):</strong> Asegúrate de tener listos todos los materiales indicados en la Diapositiva 1 antes de iniciar la misión.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> N/A</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 1 -->
+<div id="activity-1" class="activity">
+    <div class="banner" onclick="toggleContent('bienvenida')">
+        <div class="title">🎉 Actividad 1: Bienvenida e Introducción ⏰ Tiempo: 1 minuto</div>
+        <div class="subtitle">Dar la bienvenida a los niños, presentar el enfoque del día y preparar sus mentes para la actividad.</div>
+    </div>
+    <div id="bienvenida" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (0.5 minutos):</strong> Reproduce la Diapositiva 2 “Bienvenida” y saluda a los niños mientras muestras el logo de Gnius Club, luego introduce el tema del día y la necesidad de entrenar el cerebro para la misión.</td>
+                 <td><strong>DIÁLOGO SUGERIDO:</strong> "¡Hola, Genios del CODE SQUAD! ¡Bienvenidos a la Fábrica de Juguetes Mágicos! Hoy vamos a ayudar a la inventora Sofía con su nueva máquina, la cual hace juguetes que se mueven con patrones repetitivos. Para que los juguetes funcionen correctamente, vamos a entrenar nuestros cerebros y aprender sobre bucles. ¡Prepárense para esta fantástica aventura!"</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (0.5 minutos):</strong> Reproduce la Diapositiva 3 "Gimnasio CODE SQUAD" e introduce la importancia de entrenar el cerebro antes de enfrentar el reto del día.</td>
+                 <td><strong>DIÁLOGO SUGERIDO:</strong> "¡Excelente, equipo! Antes de empezar a trabajar en la fábrica, vamos a preparar nuestras mentes. ¡Pongan atención al Gimnasio del CODE SQUAD!  Escuchen la canción, ya que nos dará la clave para movernos y pensar mejor. ¡Vamos a activarnos para que los juguetes mágicos funcionen a la perfección!"</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 2 -->
+<div id="activity-2" class="activity">
+    <div class="banner" onclick="toggleContent('baile-secuenciacion')">
+        <div class="title">🎶 Actividad 2: Baile de Algoritmos ⏰ Tiempo: 2 minutos</div>
+        <div class="subtitle">Preparar a los niños para la misión con un ejercicio de algoritmos a través de un baile.</div>
+    </div>
+    <div id="baile-secuenciacion" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (2 minutos):</strong> Reproduce la Diapositiva 4 “Baile de Algoritmos” e introduce la canción que seguiremos hoy.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "¡Es hora de movernos, Genios! La canción que escucharán ahora es como la máquina de juguetes de Sofía. Cada movimiento que hacemos sigue un patrón que se repite. Sigan los pasos con atención, porque esto nos ayudará a entender cómo funcionan los juguetes mágicos. ¡Prepárense, vamos a bailar y a crear magia!"</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 3 -->
+<div id="activity-3" class="activity">
+    <div class="banner" onclick="toggleContent('planteamiento-problema')">
+        <div class="title">🧸 Actividad 3: Planteamiento del Problema ⏰ Tiempo: 2 minutos</div>
+        <div class="subtitle">Introducir a los niños en el contexto de la misión utilizando la historia.</div>
+    </div>
+    <div id="planteamiento-problema" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (1 minuto):</strong> Reproduce la DIAPOSITIVA 5, adopta la actitud de cuenta cuentos y narra la historia.</td>
+                 <td><strong>DIÁLOGO SUGERIDO:</strong> 
+                "¡Genios del CODE SQUAD! Llegamos a la Fábrica de Juguetes Mágicos, un lugar lleno de creatividad y diversión. Aquí, la inventora Sofía ha creado una máquina que hace juguetes increíbles que se mueven solos, pero necesita nuestra ayuda para programar los movimientos. ¡Imaginen que cada juguete tiene su propio patrón de movimiento que se repite una y otra vez! ¿Están listos para ayudar a Sofía con su gran invento?"
+                </td>
+            </tr>
+            <tr>
+                 <td><strong>PASO 2 (1 minuto):</strong> Reproduce la DIAPOSITIVA 6 y explica el reto para motivar al CODE SQUAD.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> 
+                "¡Equipo CODE SQUAD! La máquina de Sofía funciona con un mapa especial, donde cada baldosa representa un movimiento diferente para los juguetes: caminar, girar y levantar los brazos. Nosotros debemos crear un camino con las fichas de ruta que indiquen a los juguetes qué movimientos realizar.  Además, algunos movimientos se repiten una y otra vez. Para esto usaremos la ficha de retorno que indica la repetición. Con la ayuda de Dart, vamos a hacer que todos los juguetes mágicos se muevan correctamente. ¡Manos a la obra!"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 4 -->
+<div id="activity-4" class="activity">
+    <div class="banner" onclick="toggleContent('formacion-parejas')">
+        <div class="title">🤝 Actividad 4: Formación de Parejas ⏰ Tiempo: 3 minutos</div>
+        <div class="subtitle">Explicar la importancia del trabajo en equipo en parejas y asegurar la organización.</div>
+    </div>
+    <div id="formacion-parejas" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (2 minutos):</strong> Reproduce la DIAPOSITIVA 7 “Formación de Equipos”, explica la importancia de trabajar en equipo y junta a los niños en pares. Si el número es impar, integra un trío para asegurar que todos tengan compañeros.</td>
+                 <td><strong>DIÁLOGO SUGERIDO:</strong> 
+                "¡Genios del CODE SQUAD! Recuerden que 'más manos hacen más fácil el trabajo'. Cuando trabajamos juntos, podemos crear cosas increíbles y ayudar a Sofía a que su fábrica funcione aún mejor. Para programar los movimientos de los juguetes, vamos a formar parejas.  Busquen a un compañero para trabajar en equipo y levanten la mano. Si alguien no tiene pareja, ¡yo seré su compañero/a de equipo!"
+                </td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (1 minuto):</strong> Verifica que todos los niños estén emparejados y organizados para trabajar.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> 
+                "¡Perfecto, todos tienen su pareja! Recuerden que trabajar juntos significa compartir ideas y ayudarse. Mientras mejor trabajen en equipo, más fácil será programar los juguetes de Sofía. ¡Prepárense para crear la magia de la fábrica!"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 5 -->
+<div id="activity-5" class="activity">
+    <div class="banner" onclick="toggleContent('codigo_visual')">
+        <div class="title">🎨 Actividad 5: Reto de Codificación ⏰ Tiempo: Variable <span id="activity-5-total-time">Variable según el nivel</span></div>
+        <div class="subtitle">Introducir los retos de codificación según la edad y trabajar con fichas de ruta.</div>
+    </div>
+    <div id="codigo_visual" class="content">
+        <table id="activity-5-content">
+            <!-- Contenido insertado dinámicamente por JavaScript -->
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 6 -->
+<div id="activity-6" class="activity">
+    <div class="banner" onclick="toggleContent('intercambio_construccion')">
+        <div class="title">🔄 Actividad 6: Intercambio de Códigos y Construcción ⏰ Tiempo: Variable <span id="activity-6-total-time">Variable según el nivel</span></div>
+        <div class="subtitle">Intercambio de códigos entre equipos y práctica de programación con fichas de ruta.</div>
+    </div>
+    <div id="intercambio_construccion" class="content">
+        <table id="activity-6-content">
+            <!-- Contenido insertado dinámicamente por JavaScript -->
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 7 -->
+<div id="activity-7" class="activity">
+    <div class="banner" onclick="toggleContent('obstaculo_historia')">
+        <div class="title">⚠️ Actividad 7: Mensaje del Cuartel ⏰ Tiempo: Variable <span id="activity-7-total-time">Variable según el nivel</span></div>
+        <div class="subtitle">Introducir un obstáculo en la narrativa para mantener el interés y la motivación.</div>
+    </div>
+    <div id="obstaculo_historia" class="content">
+        <table id="activity-7-content">
+            <!-- Contenido insertado dinámicamente por JavaScript -->
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 8 -->
+<div id="activity-8" class="activity">
+    <div class="banner" onclick="toggleContent('conclusion_reflexion')">
+        <div class="title">🏁 Actividad 8: Conclusión de la Historia y Reflexión ⏰ Tiempo: 5 minutos</div>
+        <div class="subtitle">Cierre de la misión y reflexión sobre lo aprendido durante la clase.</div>
+    </div>
+    <div id="conclusion_reflexion" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (5 minutos):</strong> Reproduce la DIAPOSITIVA 25 y cierra la historia como cuenta cuentos. Realiza preguntas para reflexionar sobre lo aprendido.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> 
+                    "¡Genios del CODE SQUAD! ¡Misión cumplida! Gracias a su increíble trabajo, la máquina de Sofía hace que todos los juguetes mágicos se muevan con patrones repetitivos y la fábrica está funcionando de maravilla. Sofía está muy contenta y les agradece por ayudarla. Ahora, reflexionemos sobre lo que aprendimos hoy:
+-  ¿Por qué fue importante repetir algunos movimientos en bucle?
+-  ¿Qué ficha nos ayudó a indicar cuándo un movimiento se repite?
+-  ¿Cómo nos ayudó el trabajo en equipo para resolver este reto en la fábrica de juguetes? ¡Son unos genios de la programación!"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+
+               <!-- ............................................Aquí terminarán las actividades........................................... -->
+
+    </div>
+
+<script>
+    function toggleContent(id) {
+        var content = document.getElementById(id);
+        if (content.style.display === "block") {
+            content.style.display = "none";
+            } else {
+            content.style.display = "block";
+        }
+    }
+
+    function updateContent() {
+        var time = document.getElementById("class-time").value;
+        var level = document.getElementById("class-level").value;
+        document.getElementById("selected-time").innerText = "Tiempo efectivo de clase: " + time + " minutos";
+        document.getElementById("selected-level").innerText = "Nivel: " + level;
+
+        var steps = {
+    "K1": {
+        "5.1": [
+            {
+                "step": 1,
+                 "time": { "30": 1, "40": 1, "50": 1 },
+                "accion": "Reproduce la DIAPOSITIVA 8 y explica cómo crear el código para resolver el reto.",
+                 "dialogo": "¡CODE SQUAD! Para ayudar a Sofía a programar los juguetes, vamos a crear un código con fichas. Usaremos fichas de camino para representar los movimientos de los juguetes: caminar, girar y levantar los brazos.  Ficha recta para caminar, ficha de esquina para girar, y ficha curva simple para levantar los brazos. La ficha de retorno indicará que el movimiento se repite en bucle. ¡Manos a la obra!"
+            },
+            {
+                "step": 2,
+                 "time": { "30": 2, "40": 2, "50": 2 },
+                 "accion": "Reproduce la DIAPOSITIVA 9, distribuye los materiales y asegúrate de que todos tengan lo necesario.",
+                "dialogo": "¡Aquí tienen sus hojas y colores, Genios! Dibujen los movimientos (caminar, girar y levantar brazos) y la ficha que representa cada uno. ¡Prepárense para codificar los movimientos de los juguetes!"
+            },
+            {
+                "step": 3,
+                 "time": { "30": 5, "40": 10, "50": 10 },
+                "accion": "Reproduce la DIAPOSITIVA 10 y supervisa la creación del código en pares. Ayuda a los equipos mientras dibujan y asignan fichas de ruta.",
+                 "dialogo": "¡Excelente, CODE SQUAD! Recuerden, cada movimiento debe tener su ficha. Dibujen el movimiento, después el símbolo '=' y al lado la ficha que lo representa. ¡Recuerden usar la ficha de retorno para indicar que un movimiento se repite en bucle! ¡Hagamos que estos juguetes se muevan de maravilla!"
+            }
+         ],
+        "6": [
+            {
+                 "step": 1,
+                 "time": { "30": 2, "40": 2, "50": 2 },
+                 "accion": "Reproduce la DIAPOSITIVA 17 y dirige a los Genios para que intercambien los códigos que hicieron.",
+                "dialogo": "¡CODE SQUAD! ¡Sus códigos están fantásticos! Ahora, vamos a intercambiarlos para programar diferentes juguetes. Yo los recogeré, les pondré su nombre y se los daré a otro equipo. ¡Así todos podremos ayudar a crear la magia de los juguetes!"
+            },
+            {
+                "step": 2,
+                 "time": { "30": 7, "40": 10, "50": 10 },
+                "accion": "Reproduce la DIAPOSITIVA 18 y distribuye los códigos asignados para que cada equipo comience a construir.",
+                "dialogo": "¡Es hora de construir, Genios! Usen el código que recibieron y coloquen las fichas de ruta en el orden correcto: la ficha recta para caminar, la ficha de esquina para girar, la ficha curva simple para levantar los brazos y la ficha de retorno para los bucles. ¡Ayudemos a que los juguetes se muevan correctamente!"
+            }
+          ],
+        "7": [
+            {
+                 "step": 1,
+                 "time": { "30": 3, "40": 4, "50": 5 },
+                 "accion": "Reproduce la DIAPOSITIVA 21 y explica el obstáculo a los Genios.",
+                "dialogo": "¡CODE SQUAD! ¡Tenemos un problema en la fábrica! Justo cuando estábamos a punto de terminar, un travieso gatito movió algunas baldosas y los patrones de los juguetes se desordenaron. ¡Oh, no!  Pero no se preocupen, el cuartel general nos envió un código de rescate para solucionar este problema. ¡Vamos a poner todo en orden!"
+            },
+            {
+                 "step": 2,
+                 "time": { "30": 7, "40": 10, "50": 10 },
+                 "accion": "Reproduce la DIAPOSITIVA 22 “Código de Rescate K1” y motiva a los Genios que sigan el nuevo código proyectado en la pantalla.",
+                "dialogo": "¡Genios del CODE SQUAD! Aquí tienen el código de rescate. Usen las fichas rectas para caminar, de esquina para girar, las curvas simples para levantar los brazos y las de retorno para los bucles.  ¡Sigan el código con cuidado para que los juguetes se muevan de forma correcta otra vez! ¡Ustedes son increíbles!"
+            }
+          ]
+    },
+   "K2": {
+        "5.2": [
+            {
+                 "step": 1,
+                 "time": { "30": 1, "40": 1, "50": 1 },
+                 "accion":"Reproduce la DIAPOSITIVA 11 y explica cómo crear el código para resolver el reto.",
+                 "dialogo":"¡CODE SQUAD! Para ayudar a Sofía a crear más juguetes, vamos a hacer un código más avanzado.  Además de caminar, girar y levantar los brazos, ahora incluiremos la acción de dar un salto pequeño.  Usaremos las fichas de camino: recta para caminar, esquina para girar, curva simple para levantar los brazos y la ficha de retorno para indicar los bucles en los movimientos. ¡Vamos a crear juguetes que se muevan de maravilla!"
+            },
+            {
+                "step": 2,
+                 "time": { "30": 2, "40": 2, "50": 2 },
+                 "accion":"Reproduce la DIAPOSITIVA 12, distribuye los materiales y asegúrate de que todos tengan lo necesario.",
+                 "dialogo":"¡Aquí tienen sus hojas y colores, Genios! Dibujen los movimientos (caminar, girar, levantar los brazos y dar un salto pequeño) y la ficha que representará cada uno. ¡Prepárense para codificar los movimientos de los nuevos juguetes!"
+            },
+            {
+                "step": 3,
+                 "time": { "30": 5, "40": 10, "50": 10 },
+                "accion":"Reproduce la DIAPOSITIVA 13 y supervisa la creación del código en pares. Ayuda a los equipos mientras dibujan y asignan fichas de ruta.",
+                 "dialogo":"¡Excelente, CODE SQUAD! Cada movimiento debe tener su ficha: recta para caminar, esquina para girar, curva simple para levantar los brazos, y recuerden la ficha de retorno para los bucles en los movimientos. ¡Dibújenlo con cuidado y vamos a crear los mejores juguetes de todos!"
+            }
+         ],
+        "6": [
+            {
+                 "step": 1,
+                 "time": { "30": 2, "40": 2, "50": 2 },
+                "accion":"Reproduce la DIAPOSITIVA 17 y dirige a los Genios para que intercambien los códigos que hicieron.",
+                "dialogo":"¡CODE SQUAD! ¡Sus códigos son súper creativos! Vamos a intercambiarlos para que todos programen diferentes patrones en la fábrica de juguetes. Yo recogeré sus hojas y se las daré a otro equipo. ¡Es hora de que todos creen juguetes mágicos!"
+            },
+            {
+                 "step": 2,
+                 "time": { "30": 7, "40": 10, "50": 10 },
+                 "accion":"Reproduce la DIAPOSITIVA 19 y distribuye los códigos asignados para que cada equipo comience a construir.",
+                "dialogo":"¡Genios, es hora de construir! Usen el código que recibieron para crear los patrones de los juguetes con las fichas de ruta: recta para caminar, esquina para girar, curva simple para levantar los brazos y la ficha de retorno para los bucles. ¡Ayudemos a que todos los juguetes se muevan!"
+            }
+         ],
+        "7": [
+            {
+                 "step": 1,
+                 "time": { "30": 3, "40": 4, "50": 5 },
+                 "accion":"Reproduce la DIAPOSITIVA 21 y explica el obstáculo a los Genios.",
+                "dialogo":"¡CODE SQUAD! ¡Alerta en la fábrica de juguetes! El gatito travieso ha regresado y ha desordenado los patrones de movimiento de los juguetes. ¡Oh, no! Pero no se preocupen, el cuartel general nos ha enviado un código secreto para que todo vuelva a funcionar.  ¡Vamos a trabajar juntos para superar este nuevo desafío!"
+            },
+            {
+                "step": 2,
+                 "time": { "30": 7, "40": 10, "50": 10 },
+                 "accion":"Reproduce la DIAPOSITIVA 23 “Código de Rescate K2” y motiva a los Genios que sigan el nuevo código proyectado en la pantalla.",
+                 "dialogo":"¡Genios del CODE SQUAD! Aquí tienen el código de rescate.  Usen las fichas de ruta con cuidado: recta para caminar, esquina para girar, curva simple para levantar los brazos y las de retorno para los bucles. ¡Vamos a poner todos los juguetes en movimiento otra vez!"
+            }
+          ]
+    },
+    "K3": {
+        "5.3": [
+             {
+                "step": 1,
+                 "time": { "30": 1, "40": 1, "50": 1 },
+                 "accion":"Reproduce la DIAPOSITIVA 14 y explica cómo crear el código para resolver el reto.",
+                 "dialogo":"¡CODE SQUAD! Vamos a crear un código más complejo para la máquina de Sofía. Usaremos fichas de camino para representar los movimientos: caminar, girar, levantar los brazos, dar un salto pequeño y hacer un giro en el aire.  La recta para caminar, la esquina para girar, la curva simple para levantar los brazos, la ficha de retorno para indicar que los movimientos se repiten en bucle y la ficha de doble curva para indicar un salto en el aire. ¡Vamos a programar los juguetes más geniales!"
+            },
+            {
+                "step": 2,
+                 "time": { "30": 2, "40": 2, "50": 2 },
+                 "accion":"Reproduce la DIAPOSITIVA 15, distribuye los materiales y asegúrate de que todos tengan lo necesario.",
+                 "dialogo":"¡Aquí tienen sus hojas y colores, Genios! Dibujen cada movimiento de los juguetes (caminar, girar, levantar los brazos, dar un salto pequeño y hacer un giro en el aire) y la ficha que lo representará. ¡Es hora de que sus ideas tomen forma en papel!"
+            },
+            {
+                "step": 3,
+                 "time": { "30": 5, "40": 10, "50": 10 },
+                 "accion":"Reproduce la DIAPOSITIVA 16 y supervisa la creación del código en pares. Ayuda a los equipos mientras dibujan y asignan fichas de ruta.",
+                 "dialogo":"¡Excelente trabajo, CODE SQUAD!  Cada movimiento debe tener su ficha: la recta para caminar, la esquina para girar, la curva simple para levantar los brazos, la de doble curva para el salto en el aire y la ficha de retorno para los bucles. ¡Dibujen sus códigos con cuidado y prepárense para la magia de la fábrica!"
+            }
+          ],
+        "6": [
+            {
+                 "step": 1,
+                 "time": { "30": 2, "40": 2, "50": 2 },
+                 "accion":"Reproduce la DIAPOSITIVA 17 y dirige a los Genios para que intercambien los códigos que hicieron.",
+                "dialogo":"¡CODE SQUAD! ¡Sus códigos son súper creativos! Vamos a intercambiarlos para crear diferentes patrones de movimiento en la fábrica de juguetes. Recogeré sus creaciones y se las daré a otro equipo.  ¡Así, todos vamos a programar juntos los juguetes!"
+            },
+            {
+                "step": 2,
+                 "time": { "30": 7, "40": 10, "50": 10 },
+                 "accion":"Reproduce la DIAPOSITIVA 20 y distribuye los códigos asignados para que cada equipo comience a construir.",
+                "dialogo":"¡Es hora de construir, Genios!  Usen el código que recibieron para crear los patrones de movimiento de los juguetes: recta para caminar, esquina para girar, curva simple para levantar los brazos, doble curva para dar un salto en el aire y las fichas de retorno para los bucles.  ¡Hagamos que todos los juguetes se muevan de manera increíble!"
+            }
+          ],
+        "7": [
+            {
+                 "step": 1,
+                 "time": { "30": 3, "40": 4, "50": 5 },
+                 "accion":"Reproduce la DIAPOSITIVA 21 y explica el obstáculo a los Genios.",
+                "dialogo":"¡CODE SQUAD! ¡Emergencia en la fábrica de juguetes! El travieso gatito ha vuelto a desordenar las baldosas, haciendo que los patrones de los juguetes se descontrolen. ¡Oh no! Pero el cuartel general nos ha enviado un nuevo código para solucionar este problema. ¡Trabajemos juntos para salvar el día!"
+            },
+            {
+                 "step": 2,
+                 "time": { "30": 7, "40": 10, "50": 10 },
+                 "accion":"Reproduce la DIAPOSITIVA 24 y motiva a los Genios a construir el nuevo código con bloques siguiendo el patrón proyectado.",
+                 "dialogo":"¡Atención, Genios! Aquí tienen el código de rescate. Usen las fichas rectas para caminar, las esquinas para girar, las curvas simples para levantar los brazos, las dobles curvas para saltar en el aire y las de retorno para los bucles. Sigan el código y hagan que los juguetes mágicos se muevan de nuevo. ¡Ustedes pueden lograrlo!"
+            }
+          ]
+    }
+};
+
+
+
+        // Mostrar u ocultar actividades según el nivel seleccionado
+        var activities = {
+            "activity-0": true,
+            "activity-1": true,
+            "activity-2": true,
+            "activity-3": true,
+            "activity-4": true,
+            "activity-5": true,
+            "activity-6": true,
+            "activity-7": steps[level]["7"].some(s => s.time[time] > 0),
+            "activity-8": true
+        };
+
+        Object.keys(activities).forEach(function(activityId) {
+            var activityElement = document.getElementById(activityId);
+            if (activities[activityId]) {
+                activityElement.style.display = "block";
+            } else {
+                activityElement.style.display = "none";
+            }
+        });
+
+        // Renderizar los pasos dinámicamente en las tablas de actividades 5, 6 y 7
+        renderActivitySteps("activity-5-content", steps[level]["5." + (level === "K1" ? 1 : level === "K2" ? 2 : 3)], time);
+        renderActivitySteps("activity-6-content", steps[level]["6"], time);
+        renderActivitySteps("activity-7-content", steps[level]["7"], time);
+
+        document.getElementById("activity-5-total-time").innerText = calculateTotalTime(steps[level]["5." + (level === "K1" ? 1 : level === "K2" ? 2 : 3)], time) + " minutos";
+        document.getElementById("activity-6-total-time").innerText = calculateTotalTime(steps[level]["6"], time) + " minutos";
+        document.getElementById("activity-7-total-time").innerText = calculateTotalTime(steps[level]["7"], time) + " minutos";
+    }
+
+    function renderActivitySteps(contentId, steps, time) {
+        var contentContainer = document.getElementById(contentId);
+        contentContainer.innerHTML = "";
+        steps.forEach(function(step) {
+            if (step.time[time] > 0) {
+                var row = document.createElement("tr");
+                var stepCell = document.createElement("td");
+                var dialogCell = document.createElement("td");
+
+                stepCell.innerHTML = "<strong>PASO " + step.step + " (" + step.time[time] + " minutos):</strong> " + step.accion;
+                dialogCell.innerHTML = "<strong>DIÁLOGO SUGERIDO:</strong> " + step.dialogo;
+
+                row.appendChild(stepCell);
+                row.appendChild(dialogCell);
+                contentContainer.appendChild(row);
+            }
+        });
+    }
+
+    function calculateTotalTime(steps, time) {
+        return steps.reduce((total, step) => total + step.time[time], 0);
+    }
+
+    updateContent();
+</script>
